@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://makesword.github.io</id>
     <title>Gridea</title>
-    <updated>2019-08-06T01:07:26.440Z</updated>
+    <updated>2019-08-06T13:33:21.095Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://makesword.github.io"/>
     <link rel="self" href="https://makesword.github.io/atom.xml"/>
@@ -11,35 +11,38 @@
     <icon>https://makesword.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://makesword.github.io/post/hello-gridea</id>
-        <link href="https://makesword.github.io/post/hello-gridea">
+        <title type="html"><![CDATA[MySQL学习]]></title>
+        <id>https://makesword.github.io/post/mysql-xue-xi</id>
+        <link href="https://makesword.github.io/post/mysql-xue-xi">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        <updated>2019-08-06T13:19:55.000Z</updated>
+        <summary type="html"><![CDATA[<h4 id="mysql介绍">MySQL介绍</h4>
+<p>MySQL 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle 公司，MySQL 是最流行的关系型数据库管理系统（关系数据库，是建立在关系数据库模型基础上的数据库，借助于集合代数等概念和方法来处理数据库中的数据）。由于其体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，一般中小型网站的开发者都选择 MySQL 作为网站数据库。MySQL 使用 SQL 语言进行操作。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="http://hvenotes.fehey.com/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>𝖶𝗂𝗇𝖽𝗈𝗐𝗌</strong> 或 <strong>𝖬𝖺𝖼𝖮𝖲</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <content type="html"><![CDATA[<h4 id="mysql介绍">MySQL介绍</h4>
+<p>MySQL 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle 公司，MySQL 是最流行的关系型数据库管理系统（关系数据库，是建立在关系数据库模型基础上的数据库，借助于集合代数等概念和方法来处理数据库中的数据）。由于其体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，一般中小型网站的开发者都选择 MySQL 作为网站数据库。MySQL 使用 SQL 语言进行操作。</p>
+<!--more-->
+<h4 id="数据库的基本操作">数据库的基本操作</h4>
+<p>1.查看数据库</p>
+<pre><code>SHOW DATABASES;
+</code></pre>
+<p>2.选中数据库</p>
+<pre><code>USE DATABASE;
+</code></pre>
+<p>3.查看表</p>
+<pre><code>SHOW TABLES;
+</code></pre>
+<p>4.创建表</p>
+<pre><code>CREATE TABLE 表名(id int(10),name char(20));
+</code></pre>
+<p>5.插入内容</p>
+<pre><code>INSERT INTO 表的名字(列名a,列名b,列名c) VALUES(值1,值2,值3);
+</code></pre>
+<p>6.查询表中的所有内容</p>
+<pre><code>SELECT * FROM 表名；
+</code></pre>
+<h4 id="补充">补充</h4>
+<p>char与varchar的区别：char的长度是固定的，而varchar是可变的</p>
 ]]></content>
     </entry>
 </feed>
