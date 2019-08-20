@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://makesword.github.io</id>
     <title>Amir</title>
-    <updated>2019-08-20T14:39:28.455Z</updated>
+    <updated>2019-08-20T15:02:03.494Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://makesword.github.io"/>
     <link rel="self" href="https://makesword.github.io/atom.xml"/>
@@ -38,14 +38,15 @@
 <pre><code>select user，file_priv from mysql.user;
 </code></pre>
 <p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566301473629.png" alt="">
-3.secure-file-priv的作用
-secure-file-priv参数是用来限制LOAD DATA, SELECT … OUTFILE, and LOAD_FILE()
+3.secure-file-priv的作用</p>
+<pre><code>secure-file-priv参数是用来限制LOAD DATA, SELECT … OUTFILE, and LOAD_FILE()
 传到哪个指定目录的。
 当secure_file_priv的值为null ，表示限制mysqld 不允许导入|导出
 当secure_file_priv的值为/tmp/ ，表示限制mysqld 的导入|导出只能发生在/tmp/
 目录下
 当secure_file_priv的值没有具体值时，表示不对mysqld 的导入|导出做限制
-在mysql 5.6.34版本以后 secure_file_priv的值默认为NULL</p>
+在mysql 5.6.34版本以后 secure_file_priv的值默认为NULL
+</code></pre>
 <p>4.secure_file_priv 值查看和修改
 查看：</p>
 <pre><code>show global variables like 'secure_file_priv';
