@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>数据库系统功能相关学习 | Amir</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://makesword.github.io/favicon.ico?v=1566477163181">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://makesword.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://makesword.github.io">
+        <img src="https://makesword.github.io/images/avatar.png?v=1566477163181" class="site-logo">
+        <h1 class="site-title">Amir</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://makesword.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">数据库系统功能相关学习</h2>
+            <div class="post-date">2019-08-22</div>
+            
+            <div class="post-content">
+              <h3 id="0x01-利用mysql内置变量获取敏感信息">0x01 利用MySQL内置变量获取敏感信息</h3>
+<p>1.select version();            --获取数据库版本信息
+2.select user();                 --获取数据库的用户
+3.select database();         --获取当前数据库名
+4.select @@datadir;       --获取当前数据库路径
+5.select @@version_compile_os;    --操作系统版本</p>
+<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566431912645.png" alt=""></p>
+<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566431974140.png" alt=""></p>
+<h3 id="0x02-常用注入函数">0x02 常用注入函数</h3>
+<p>1.字符串拼接函数：concat(),concat_ws(),group_concat()</p>
+<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566432978233.png" alt=""></p>
+<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566433257438.png" alt=""></p>
+<p>组合利用
+<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566433576254.png" alt=""></p>
+<p>2.字符串截取函数：
+substr(截取字符串, 起始位置，截取长度)</p>
+<p>mid(截取字符串, 起始位置，截取长度)
+<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566473810056.png" alt=""></p>
+<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566474415472.png" alt="">
+注意给要截取的字符串打引号
+left(str, length)
+从左开始截取字符串</p>
+<p>3.返回指定的ASCII字符所对应的数值函数
+ascii()
+ord()
+<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566474997716.png" alt="">
+4返回指定数字对应的ascii码字符的函数
+char()
+<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566475100112.png" alt="">
+5.与计算相关的函数</p>
+<p>length():返回字符串长度
+count(*) 它返回检索行的数目， 不论其是否包含 NULL值。
+<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566475520398.png" alt=""></p>
+<p>6.时间盲注用到的函数
+sleep()
+if()
+7.读写文件的函数
+into outfile
+into dumpfile
+load_file():读取根目录下文件</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://makesword.github.io/tag/DcUBZtgDe" class="tag">
+                    MySQL内置变量
+                  </a>
+                
+                  <a href="https://makesword.github.io/tag/X1PCIYaVr" class="tag">
+                    MySQL常用函数
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://makesword.github.io/post/shu-ju-ku-xi-tong-biao-xiang-guan-xue-xi">
+                  <h3 class="post-title">
+                    数据库系统表相关学习
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
