@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://makesword.github.io</id>
     <title>Amir</title>
-    <updated>2019-09-03T12:04:23.241Z</updated>
+    <updated>2019-09-23T15:39:55.692Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://makesword.github.io"/>
     <link rel="self" href="https://makesword.github.io/atom.xml"/>
@@ -17,44 +17,44 @@
         </link>
         <updated>2019-08-22T12:31:14.000Z</updated>
         <content type="html"><![CDATA[<h3 id="0x01-利用mysql内置变量获取敏感信息">0x01 利用MySQL内置变量获取敏感信息</h3>
-<p>1.select version();            --获取数据库版本信息
-2.select user();                 --获取数据库的用户
-3.select database();         --获取当前数据库名
-4.select @@datadir;       --获取当前数据库路径
+<p>1.select version();            --获取数据库版本信息<br>
+2.select user();                 --获取数据库的用户<br>
+3.select database();         --获取当前数据库名<br>
+4.select @@datadir;       --获取当前数据库路径<br>
 5.select @@version_compile_os;    --操作系统版本</p>
-<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566431912645.png" alt=""></p>
-<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566431974140.png" alt=""></p>
+<figure data-type="image" tabindex="1"><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566431912645.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566431974140.png" alt=""></figure>
 <h3 id="0x02-常用注入函数">0x02 常用注入函数</h3>
 <p>1.字符串拼接函数：concat(),concat_ws(),group_concat()</p>
-<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566432978233.png" alt=""></p>
-<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566433257438.png" alt=""></p>
-<p>组合利用
+<figure data-type="image" tabindex="3"><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566432978233.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566433257438.png" alt=""></figure>
+<p>组合利用<br>
 <img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566433576254.png" alt=""></p>
-<p>2.字符串截取函数：
+<p>2.字符串截取函数：<br>
 substr(截取字符串, 起始位置，截取长度)</p>
-<p>mid(截取字符串, 起始位置，截取长度)
+<p>mid(截取字符串, 起始位置，截取长度)<br>
 <img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566473810056.png" alt=""></p>
-<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566474415472.png" alt="">
-注意给要截取的字符串打引号
-left(str, length)
+<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566474415472.png" alt=""><br>
+注意给要截取的字符串打引号<br>
+left(str, length)<br>
 从左开始截取字符串</p>
-<p>3.返回指定的ASCII字符所对应的数值函数
-ascii()
-ord()
-<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566474997716.png" alt="">
-4返回指定数字对应的ascii码字符的函数
-char()
-<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566475100112.png" alt="">
+<p>3.返回指定的ASCII字符所对应的数值函数<br>
+ascii()<br>
+ord()<br>
+<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566474997716.png" alt=""><br>
+4返回指定数字对应的ascii码字符的函数<br>
+char()<br>
+<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566475100112.png" alt=""><br>
 5.与计算相关的函数</p>
-<p>length():返回字符串长度
-count(*) 它返回检索行的数目， 不论其是否包含 NULL值。
+<p>length():返回字符串长度<br>
+count(*) 它返回检索行的数目， 不论其是否包含 NULL值。<br>
 <img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566475520398.png" alt=""></p>
-<p>6.时间盲注用到的函数
-sleep()
-if()
-7.读写文件的函数
-into outfile
-into dumpfile
+<p>6.时间盲注用到的函数<br>
+sleep()<br>
+if()<br>
+7.读写文件的函数<br>
+into outfile<br>
+into dumpfile<br>
 load_file():读取根目录下文件</p>
 ]]></content>
     </entry>
@@ -65,27 +65,27 @@ load_file():读取根目录下文件</p>
         </link>
         <updated>2019-08-20T14:16:40.000Z</updated>
         <summary type="html"><![CDATA[<h4 id="0x01如何利用数据库的功能读写文件">0x01.如何利用数据库的功能读写文件</h4>
-<p>读写条件：
-1.要知道网站的绝对路径
-2.要写的文件不能已经存在
-3.当前数据库用户要有FILE权限
+<p>读写条件：<br>
+1.要知道网站的绝对路径<br>
+2.要写的文件不能已经存在<br>
+3.当前数据库用户要有FILE权限<br>
 4.secure_file_priv的值为空</p>
 ]]></summary>
         <content type="html"><![CDATA[<h4 id="0x01如何利用数据库的功能读写文件">0x01.如何利用数据库的功能读写文件</h4>
-<p>读写条件：
-1.要知道网站的绝对路径
-2.要写的文件不能已经存在
-3.当前数据库用户要有FILE权限
+<p>读写条件：<br>
+1.要知道网站的绝对路径<br>
+2.要写的文件不能已经存在<br>
+3.当前数据库用户要有FILE权限<br>
 4.secure_file_priv的值为空</p>
 <!-- more -->
-<p>1.如何获取网站的绝对路径？
-通过访问phpinfo文件搜索document_root即可获得
-<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566268100975.png" alt="">
-通过报错来显示
+<p>1.如何获取网站的绝对路径？<br>
+通过访问phpinfo文件搜索document_root即可获得<br>
+<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566268100975.png" alt=""><br>
+通过报错来显示<br>
 2.如何查看用户的FILE权限</p>
 <pre><code>select user，file_priv from mysql.user;
 </code></pre>
-<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566301473629.png" alt="">
+<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566301473629.png" alt=""><br>
 3.secure-file-priv的作用</p>
 <pre><code>secure-file-priv参数是用来限制LOAD DATA, SELECT … OUTFILE, and LOAD_FILE()
 传到哪个指定目录的。
@@ -95,33 +95,33 @@ load_file():读取根目录下文件</p>
 当secure_file_priv的值没有具体值时，表示不对mysqld 的导入|导出做限制
 在mysql 5.6.34版本以后 secure_file_priv的值默认为NULL
 </code></pre>
-<p>4.secure_file_priv 值查看和修改
+<p>4.secure_file_priv 值查看和修改<br>
 查看：</p>
 <pre><code>show global variables like 'secure_file_priv';
 </code></pre>
-<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566291744037.png" alt="">
-这是我已经对secure_file_priv修改后的结果
-修改：
-打开mysql.ini文件，在mysqld中添加secure_file_priv =
+<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566291744037.png" alt=""><br>
+这是我已经对secure_file_priv修改后的结果<br>
+修改：<br>
+打开mysql.ini文件，在mysqld中添加secure_file_priv =<br>
 <img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566292015947.png" alt=""></p>
 <p>写文件操作：</p>
 <pre><code>select '&lt;?php phpinfo(); ?&gt;' into outfile 'F:/PHPstudy/phpstudy_pro/WWW/2.php';
 </code></pre>
-<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566267721548.png" alt="">
+<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566267721548.png" alt=""><br>
 <img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566301108096.png" alt=""></p>
 <p>读文件语句：</p>
 <pre><code>LOAD DATA LOCAL INFILE '文件' INTO TABLE 表;
 </code></pre>
 <h4 id="0x02数据库系统表学习">0x02.数据库系统表学习</h4>
-<p>一般MySQL数据库初始的库有information_schema,mysql,performance_schema,sys四个
+<p>一般MySQL数据库初始的库有information_schema,mysql,performance_schema,sys四个<br>
 进行SQL注入时最常用的库是information_schema，这其中有四张特别重要的表，分别是schemata, tables, columns,user_privileges</p>
 <pre><code>schemata:当前mysql中所有数据库的信息 
 tables:关于数据库中的表的信息 
 columns:关于表中的列信息 
 user_privileges:关于用户权限的信息
 </code></pre>
-<p>查看所有用户的权限
-<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566304959679.png" alt="">
+<p>查看所有用户的权限<br>
+<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566304959679.png" alt=""><br>
 查看所有数据库</p>
 <pre><code>mysql&gt; select * from schemata;
 +--------------+--------------------+----------------------------+------------------------+----------+
@@ -136,9 +136,9 @@ user_privileges:关于用户权限的信息
 +--------------+--------------------+----------------------------+------------------------+----------+
 6 rows in set (0.01 sec)
 </code></pre>
-<p>查表：
-<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566307152205.png" alt="">
-查字段：
+<p>查表：<br>
+<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566307152205.png" alt=""><br>
+查字段：<br>
 <img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566307603095.png" alt=""></p>
 ]]></content>
     </entry>

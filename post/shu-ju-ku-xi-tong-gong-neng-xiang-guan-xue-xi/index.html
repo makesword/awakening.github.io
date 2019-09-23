@@ -7,7 +7,7 @@
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://makesword.github.io/favicon.ico?v=1567512261024">
+<link rel="shortcut icon" href="https://makesword.github.io/favicon.ico?v=1569253178520">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -85,11 +85,11 @@
             <p class="article-meta">
               2019-08-22
               
-                <a href="https://makesword.github.io/tag/DcUBZtgDe" class="badge ">
+                <a href="https://makesword.github.io/tag/DcUBZtgDe" class="badge warning">
                   MySQL内置变量
                 </a>
               
-                <a href="https://makesword.github.io/tag/X1PCIYaVr" class="badge warning">
+                <a href="https://makesword.github.io/tag/X1PCIYaVr" class="badge secondary">
                   MySQL常用函数
                 </a>
               
@@ -97,44 +97,44 @@
             
             <div class="post-content">
               <h3 id="0x01-利用mysql内置变量获取敏感信息">0x01 利用MySQL内置变量获取敏感信息</h3>
-<p>1.select version();            --获取数据库版本信息
-2.select user();                 --获取数据库的用户
-3.select database();         --获取当前数据库名
-4.select @@datadir;       --获取当前数据库路径
+<p>1.select version();            --获取数据库版本信息<br>
+2.select user();                 --获取数据库的用户<br>
+3.select database();         --获取当前数据库名<br>
+4.select @@datadir;       --获取当前数据库路径<br>
 5.select @@version_compile_os;    --操作系统版本</p>
-<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566431912645.png" alt=""></p>
-<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566431974140.png" alt=""></p>
+<figure data-type="image" tabindex="1"><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566431912645.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566431974140.png" alt=""></figure>
 <h3 id="0x02-常用注入函数">0x02 常用注入函数</h3>
 <p>1.字符串拼接函数：concat(),concat_ws(),group_concat()</p>
-<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566432978233.png" alt=""></p>
-<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566433257438.png" alt=""></p>
-<p>组合利用
+<figure data-type="image" tabindex="3"><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566432978233.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566433257438.png" alt=""></figure>
+<p>组合利用<br>
 <img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566433576254.png" alt=""></p>
-<p>2.字符串截取函数：
+<p>2.字符串截取函数：<br>
 substr(截取字符串, 起始位置，截取长度)</p>
-<p>mid(截取字符串, 起始位置，截取长度)
+<p>mid(截取字符串, 起始位置，截取长度)<br>
 <img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566473810056.png" alt=""></p>
-<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566474415472.png" alt="">
-注意给要截取的字符串打引号
-left(str, length)
+<p><img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566474415472.png" alt=""><br>
+注意给要截取的字符串打引号<br>
+left(str, length)<br>
 从左开始截取字符串</p>
-<p>3.返回指定的ASCII字符所对应的数值函数
-ascii()
-ord()
-<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566474997716.png" alt="">
-4返回指定数字对应的ascii码字符的函数
-char()
-<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566475100112.png" alt="">
+<p>3.返回指定的ASCII字符所对应的数值函数<br>
+ascii()<br>
+ord()<br>
+<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566474997716.png" alt=""><br>
+4返回指定数字对应的ascii码字符的函数<br>
+char()<br>
+<img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566475100112.png" alt=""><br>
 5.与计算相关的函数</p>
-<p>length():返回字符串长度
-count(*) 它返回检索行的数目， 不论其是否包含 NULL值。
+<p>length():返回字符串长度<br>
+count(*) 它返回检索行的数目， 不论其是否包含 NULL值。<br>
 <img src="https://www.github.com/makesword/god/raw/master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1566475520398.png" alt=""></p>
-<p>6.时间盲注用到的函数
-sleep()
-if()
-7.读写文件的函数
-into outfile
-into dumpfile
+<p>6.时间盲注用到的函数<br>
+sleep()<br>
+if()<br>
+7.读写文件的函数<br>
+into outfile<br>
+into dumpfile<br>
 load_file():读取根目录下文件</p>
 
             </div>
@@ -159,7 +159,7 @@ load_file():读取根目录下文件</p>
 
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://makesword.github.io/images/avatar.png?v=1567512261024" class="no-responsive avatar">
+    <img src="https://makesword.github.io/images/avatar.png?v=1569253178520" class="no-responsive avatar">
     <div class="text-muted">温故而知新</div>
     <div class="social-container">
       
@@ -209,15 +209,15 @@ load_file():读取根目录下文件</p>
     </div>
     <div class="row">
       
-        <a href="https://makesword.github.io/tag/DcUBZtgDe" class="badge secondary">
+        <a href="https://makesword.github.io/tag/DcUBZtgDe" class="badge ">
           MySQL内置变量
         </a>
       
-        <a href="https://makesword.github.io/tag/X1PCIYaVr" class="badge success">
+        <a href="https://makesword.github.io/tag/X1PCIYaVr" class="badge warning">
           MySQL常用函数
         </a>
       
-        <a href="https://makesword.github.io/tag/jEWBUrb7x" class="badge ">
+        <a href="https://makesword.github.io/tag/jEWBUrb7x" class="badge secondary">
           MySQL
         </a>
       
