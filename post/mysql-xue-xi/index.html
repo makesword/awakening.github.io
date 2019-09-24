@@ -1,100 +1,105 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
+    
+<meta charset="utf-8" >
 
 <title>MySQL学习 | Amir</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://makesword.github.io/favicon.ico?v=1569254675341">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="shortcut icon" href="https://makesword.github.io/favicon.ico?v=1569292751282">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://makesword.github.io/styles/main.css">
 
 
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
   </head>
   <body>
-  
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://makesword.github.io">Amir</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
-        
-      </ul>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://makesword.github.io">
+        <img class="avatar" src="https://makesword.github.io/images/avatar.png?v=1569292751282" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://makesword.github.io">
+        <h1 class="site-title">Amir</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
     </div>
   </div>
-</nav>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <article class="article">
-            <h1>MySQL学习</h1>
-            <p class="article-meta">
-              2019-08-06
-              
-                <a href="https://makesword.github.io/tag/jEWBUrb7x" class="badge warning">
-                  MySQL
-                </a>
-              
-            </p>
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://makesword.github.io/post-images/mysql-xue-xi.jpg')">
+            </div>
+          
+          <h2 class="post-title">MySQL学习</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-08-06</span>
             
-              <img src="https://makesword.github.io/post-images/mysql-xue-xi.jpg" alt="MySQL学习">
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://makesword.github.io/tag/jEWBUrb7x">
+                    MySQL
+                    
+                  </a>
+                
+              </span>
             
-            <div class="post-content">
-              <h4 id="mysql介绍">MySQL介绍</h4>
+          </div>
+          <div class="post-content">
+            <h4 id="mysql介绍">MySQL介绍</h4>
 <p>MySQL 是一个 DBMS（数据库管理系统），由瑞典 MySQLAB 公司开发，目前属于 Oracle 公司，MySQL 是最流行的关系型数据库管理系统（关系数据库，是建立在关系数据库模型基础上的数据库，借助于集合代数等概念和方法来处理数据库中的数据）。由于其体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，一般中小型网站的开发者都选择 MySQL 作为网站数据库。MySQL 使用 SQL 语言进行操作。</p>
 <!--more-->
 <h4 id="数据库的基本操作">数据库的基本操作</h4>
@@ -119,96 +124,44 @@
 <h4 id="补充">补充</h4>
 <p>char与varchar的区别：char的长度是固定的，而varchar是可变的</p>
 
-            </div>
-          </article>
+          </div>
         </div>
-        <div class="paper" data-aos="fade-in">
-          
-        </div>
+
         
       </div>
 
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://makesword.github.io/images/avatar.png?v=1569254675341" class="no-responsive avatar">
-    <div class="text-muted">温故而知新</div>
-    <div class="social-container">
       
-        
+
+      <div class="site-footer">
+  <div class="slogan">温故而知新</div>
+  <div class="social-container">
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-    </div>
+    
   </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://makesword.github.io/post/shu-ju-ku-xi-tong-gong-neng-xiang-guan-xue-xi">数据库系统功能相关学习</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://makesword.github.io/post/shu-ju-ku-xi-tong-biao-xiang-guan-xue-xi">数据库系统表相关学习</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://makesword.github.io/post/mysql-xue-xi">MySQL学习</a>
-            </li>
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://makesword.github.io/tag/DcUBZtgDe" class="badge success">
-          MySQL内置变量
-        </a>
-      
-        <a href="https://makesword.github.io/tag/X1PCIYaVr" class="badge success">
-          MySQL常用函数
-        </a>
-      
-        <a href="https://makesword.github.io/tag/jEWBUrb7x" class="badge warning">
-          MySQL
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://makesword.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://makesword.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
 
     </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
